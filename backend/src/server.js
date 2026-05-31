@@ -17,14 +17,7 @@ connectDB();
 
 // Security Middleware
 app.use(helmet());
-app.use(
-  cors({
-    origin:
-      process.env.FRONTEND_URL ||
-      "https://task-manager-app-opal-ten.vercel.app/",
-    credentials: true,
-  }),
-);
+app.use(cors());
 
 // Rate Limiting
 const limiter = rateLimit({
